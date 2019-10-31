@@ -32,9 +32,7 @@ DELIMITER ;
 
 -- 3. nextSeqVal function 생성
 -- 	기능 : 해당 시퀀스가 존재하면 현재 값을 얻어서 1을 증가시켜서 업데이트를 한 뒤, 이 값을 리턴함.
-<<<<<<< HEAD
-DELIMITER $$
-=======
+
 DELIMITER $$ 
 CREATE FUNCTION `nextSeqVal`(the_name varchar(32))
 	RETURNS BIGINT UNSIGNED
@@ -50,8 +48,6 @@ $$
 DELIMITER ;
 
 
-
->>>>>>> refs/remotes/origin/JL_1007_1
 
 USE `EBLOCK`$$
 
@@ -94,17 +90,12 @@ BEGIN
        FROM sequences
 	  WHERE NAME = the_name LIMIT 1;
      RETURN ret;
-<<<<<<< HEAD
-END$$
-
-DELIMITER ;
-=======
+     
 END
 $$
 DELIMITER ;
 
 
->>>>>>> refs/remotes/origin/JL_1007_1
 
 -- 7. 활용하기 : 생성된 시퀀스로부터 nextval 값 가져오기
 select currSeqVal('seq_columnName') as seq_columnName_val from dual;
